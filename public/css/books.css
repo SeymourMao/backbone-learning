@@ -1,0 +1,69 @@
+body {
+
+}
+
+section {
+	background: rgba(12, 0, 0, 0.09);
+	width: 22.8%;
+	float: left;
+	-webkit-box-shadow: rgba(46, 42, 42, 0.5) 0 2px 5px;
+	box-shadow: rgba(46, 42, 42, 0.5) 0 2px 5px;
+	border-radius: 8px;
+	-webkit-border-radius: 8px;
+	margin-right: 10px;
+     margin-bottom: 10px;
+     padding: 10px;
+}
+
+section  img {
+	float: left;
+	cursor: pointer;
+     margin-right: 5px;
+     opacity: 0.5;
+}
+
+section  img:hover {
+   /* border: 1px solid #0066ff;*/
+   opacity: 1;
+}
+
+section p {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+section p:hover {
+	text-decoration: underline;
+}
+
+section  p:first {
+	margin-top: 10px;
+}
+
+form {
+	margin-bottom: 10px;
+}
+
+table td {
+	margin-bottom: 36px;
+}
+
+form #addBtn {
+	width: 60px;
+     padding: 3px 0;
+
+}
+
+form #addBtn:hover {
+	-webkit-box-shadow: 0 0 5px #0C0CF5;
+	box-shadow: 0 0 5px #0C0CF5;
+	color: #0C0CF5;
+	text-shadow: 0 0 1px;
+}
+
+section a.delete,  section a.edit{
+	float: right;
+	cursor: pointer;
+	margin-left: 10px;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Book Library</title>
+  <link rel="stylesheet" href="css/books.css"/>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css"/>
+</head>
+
+<body>
+
+  <div id="library">
+    <form id="addBook">
+      <fieldset>
+        <legend>Add New Book</legend>
+        <table>
+          <tr>
+            <td> <label>Title :</label></td><td><input type='text' name="title"></td>
+            <td> <label>Author :</label></td><td><input type='text' name="author"></td>
+          </tr>
+          <tr>
+            <td> <label>Release Date :</label></td><td><input type='text' id='releaseDate' name="releaseDate"></td>
+            <td> <label>Keywords :</label></td><td><input type='text' name="keywords"></td>
+          </tr>
+          <tr>
+            <td><label>Cover Image :</label></td><td><input type='file' name="coverImage"></td>
+            <td colspan="2" style="text-align: center;"><input id="addBtn" type="button" value="Add"></td>
+          </tr>
+        </table>
+    </fieldset>
+    </form>
+  </div>
+
+  <script src="js/json2.js"></script>
+  <script src="js/jquery.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+  <script src="js/underscore.js"></script>
+  <script src="js/backbone.js"></script>
+  <script src="js/jquery.dateFormat-1.0.js"></script>
+  <script src="js/books.js"></script>
+
+
+
+
+  <!-- Templates -->
+
+  <script type="text/template" id="section-template">
+     <div>
+      <img src="<%= coverImage %>" title="Book Introduction">
+      <p><%= title %></p>
+      <p><%= author %></p>
+      <p><%= $.format.date(new Date(releaseDate), 'dd/MM/yyyy') %> </p>
+      <p>
+        <% _.each(keywords, function(keyobj, index, list){ %>
+         <%= keyobj.keyword %>
+          <% if(index < list.length - 1){ %>
+           <%=', ' %>
+          <% } %>
+        <% }); %>
+      </p> 
+
+      <a class="delete">Delete</a>
+      <a class="edit">Update</a>
+      </div>
+  </script>
+  </body>
+</html>
