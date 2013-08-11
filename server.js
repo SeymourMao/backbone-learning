@@ -31,7 +31,7 @@ mongoose.connect('mongodb://localhost/library_database');
 
 //Schemas
 var Keywords = new mongoose.Schema({
-	keyword:String
+  keyword:String
 });
 
 
