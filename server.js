@@ -60,31 +60,31 @@ app.get('/api/books', function (req, res) {
 
 //Insert a new book
 app.post('/api/books', function (req, res) {
-	var book = new BookModel({
-		title:req.body.title,
-		author:req.body.author,
-		releaseDate:req.body.releaseDate,
-		coverImage: req.body.coverImage,
-		keywords:req.body.keywords
-	});
-	book.save(function (err) {
-		if (!err) {
-			return console.log('created');
-		} else {
-			return console.log(err);
-		}
-	});
-	return res.send(book);
+  var book = new BookModel({
+  	title:req.body.title,
+  	author:req.body.author,
+  	releaseDate:req.body.releaseDate,
+  	coverImage: req.body.coverImage,
+  	keywords:req.body.keywords
+  });
+  book.save(function (err) {
+  	if (!err) {
+  		return console.log('created');
+  	} else {
+  		return console.log(err);
+  	}
+  });
+  return res.send(book);
 });
 
 app.get('/api/books/:id', function(req, res){
-	return BookModel.findById(req.params.id, function(err, book){
-		if(!err){
-			return res.send(book);
-		} else {
-			return console.log(err);
-		}
-	});
+  return BookModel.findById(req.params.id, function(err, book){
+  	if(!err){
+  		return res.send(book);
+  	} else {
+  		return console.log(err);
+  	}
+  });
 });
 
 app.put('/api/books/:id', function(req, res){
